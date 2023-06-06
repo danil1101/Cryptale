@@ -2945,9 +2945,9 @@ input::-webkit-inner-spin-button {
   }
 
   .home-main__column._watcher-view:first-child {
-    -webkit-transition: all 1.5s ease 0s;
-    -o-transition: all 1.5s ease 0s;
-    transition: all 1.5s ease 0s;
+    -webkit-transition: all 1.5s ease 2s;
+    -o-transition: all 1.5s ease 2s;
+    transition: all 1.5s ease 2s;
   }
 
   .home-main__column._watcher-view:nth-child(2) {
@@ -2968,9 +2968,9 @@ input::-webkit-inner-spin-button {
   }
 
   .partners-main__column._watcher-view:first-child {
-    -webkit-transition: all 1.5s ease 0s;
-    -o-transition: all 1.5s ease 0s;
-    transition: all 1.5s ease 0s;
+    -webkit-transition: all 1.5s ease 2s;
+    -o-transition: all 1.5s ease 2s;
+    transition: all 1.5s ease 2s;
   }
 
   .partners-main__column._watcher-view:nth-child(2) {
@@ -2986,9 +2986,9 @@ input::-webkit-inner-spin-button {
   }
 
   .history-main__column._watcher-view:first-child {
-    -webkit-transition: all 1.5s ease 0s;
-    -o-transition: all 1.5s ease 0s;
-    transition: all 1.5s ease 0s;
+    -webkit-transition: all 1.5s ease 2s;
+    -o-transition: all 1.5s ease 2s;
+    transition: all 1.5s ease 2s;
   }
 
   .history-main__column._watcher-view:nth-child(2) {
