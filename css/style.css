@@ -182,6 +182,7 @@ html {
 
 .select {
   position: relative;
+  z-index: 500;
 }
 
 .select__body {
@@ -189,15 +190,16 @@ html {
 }
 
 .select__title {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), color-stop(208.04%, rgba(255, 255, 255, 0.1)));
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 208.04%);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 208.04%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), color-stop(208.04%, rgba(255, 255, 255, 0.1)));
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 208.04%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 208.04%);
   -webkit-box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   border-radius: 15px;
   color: inherit;
+  z-index: 500;
   text-align: left;
   cursor: pointer;
   max-width: 7.5rem;
@@ -690,9 +692,11 @@ body::after {
   -o-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
   color: #141414;
+  background: rgba(20, 20, 20, 0);
 }
 
 .button--small:hover {
+  background: #141414;
   color: #fff;
 }
 
@@ -720,9 +724,11 @@ body::after {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   color: #141414;
+  background: rgba(20, 20, 20, 0);
 }
 
 .button--big:hover {
+  background: #141414;
   color: #fff;
 }
 
@@ -1045,8 +1051,49 @@ input::-webkit-inner-spin-button {
   opacity: 0.6;
 }
 
+@-webkit-keyframes open {
+  0% {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes open {
+  0% {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .pagination tr.inactive {
-  display: none;
+  -webkit-animation-name: open;
+          animation-name: open;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 
 .navigation {
@@ -1313,7 +1360,14 @@ input::-webkit-inner-spin-button {
 
 .cabinet-header__name {
   font-weight: 500;
+  -webkit-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
   color: #ffffff;
+}
+
+.cabinet-header__name:hover {
+  color: #ffd550;
 }
 
 @supports (font-size: clamp( 0.875rem , 0.8419421488rem  +  0.1652892562vw , 1rem )) {
@@ -1430,6 +1484,7 @@ input::-webkit-inner-spin-button {
   padding-top: 15px;
   position: relative;
   border-right: 2px solid rgba(255, 255, 255, 0.5);
+  opacity: 0;
 }
 
 .home-main__column:first-child {
@@ -1491,6 +1546,28 @@ input::-webkit-inner-spin-button {
   .home-main__column:nth-child(3) {
     padding-left: calc(0.625rem + 1.25 * (100vw - 20rem) / 75.625);
   }
+}
+
+.home-main__column._watcher-view {
+  opacity: 1;
+}
+
+.home-main__column._watcher-view:first-child {
+  -webkit-transition: all 1.5s ease 2s;
+  -o-transition: all 1.5s ease 2s;
+  transition: all 1.5s ease 2s;
+}
+
+.home-main__column._watcher-view:nth-child(2) {
+  -webkit-transition: all 1.5s ease 2.25s;
+  -o-transition: all 1.5s ease 2.25s;
+  transition: all 1.5s ease 2.25s;
+}
+
+.home-main__column._watcher-view:last-child {
+  -webkit-transition: all 1.5s ease 2.5s;
+  -o-transition: all 1.5s ease 2.5s;
+  transition: all 1.5s ease 2.5s;
 }
 
 .home-main-column__title {
@@ -1877,6 +1954,7 @@ input::-webkit-inner-spin-button {
   padding-top: 15px;
   position: relative;
   border-right: 2px solid rgba(255, 255, 255, 0.5);
+  opacity: 0;
 }
 
 .partners-main__column:first-child {
@@ -1937,6 +2015,28 @@ input::-webkit-inner-spin-button {
   .partners-main__column:nth-child(3) {
     padding-left: calc(0.625rem + 1.25 * (100vw - 20rem) / 75.625);
   }
+}
+
+.partners-main__column._watcher-view {
+  opacity: 1;
+}
+
+.partners-main__column._watcher-view:first-child {
+  -webkit-transition: all 1.5s ease 2s;
+  -o-transition: all 1.5s ease 2s;
+  transition: all 1.5s ease 2s;
+}
+
+.partners-main__column._watcher-view:nth-child(2) {
+  -webkit-transition: all 1.5s ease 2.25s;
+  -o-transition: all 1.5s ease 2.25s;
+  transition: all 1.5s ease 2.25s;
+}
+
+.partners-main__column._watcher-view:last-child {
+  -webkit-transition: all 1.5s ease 2.5s;
+  -o-transition: all 1.5s ease 2.5s;
+  transition: all 1.5s ease 2.5s;
 }
 
 .partners-main-column__buttons {
@@ -2162,6 +2262,7 @@ input::-webkit-inner-spin-button {
   padding-top: 15px;
   position: relative;
   border-right: 2px solid rgba(255, 255, 255, 0.5);
+  opacity: 0;
 }
 
 @supports (padding-right: clamp( 0.625rem , 0.2944214876rem  +  1.652892562vw , 1.875rem )) {
@@ -2216,6 +2317,28 @@ input::-webkit-inner-spin-button {
   }
 }
 
+.history-main__column._watcher-view {
+  opacity: 1;
+}
+
+.history-main__column._watcher-view:first-child {
+  -webkit-transition: all 1.5s ease 2s;
+  -o-transition: all 1.5s ease 2s;
+  transition: all 1.5s ease 2s;
+}
+
+.history-main__column._watcher-view:nth-child(2) {
+  -webkit-transition: all 1.5s ease 2.25s;
+  -o-transition: all 1.5s ease 2.25s;
+  transition: all 1.5s ease 2.25s;
+}
+
+.history-main__column._watcher-view:last-child {
+  -webkit-transition: all 1.5s ease 2.5s;
+  -o-transition: all 1.5s ease 2.5s;
+  transition: all 1.5s ease 2.5s;
+}
+
 .history-main-column__navigation {
   margin-bottom: 70px;
 }
@@ -2237,6 +2360,14 @@ input::-webkit-inner-spin-button {
   top: 50px;
   left: 15px;
   z-index: 10;
+  opacity: 0;
+}
+
+.search-history._watcher-view {
+  -webkit-transition: opacity 1.5s ease 2s;
+  -o-transition: opacity 1.5s ease 2s;
+  transition: opacity 1.5s ease 2s;
+  opacity: 1;
 }
 
 @supports (gap: clamp( 0.625rem , 0.4597107438rem  +  0.826446281vw , 1.25rem )) {
