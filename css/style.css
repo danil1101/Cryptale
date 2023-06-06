@@ -1051,49 +1051,12 @@ input::-webkit-inner-spin-button {
   opacity: 0.6;
 }
 
-@-webkit-keyframes open {
-  0% {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  100% {
-    display: none;
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@keyframes open {
-  0% {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  100% {
-    display: none;
-    opacity: 1;
-    visibility: visible;
-  }
+.pagination tr {
+  display: table-row;
 }
 
 .pagination tr.inactive {
-  -webkit-animation-name: open;
-          animation-name: open;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+  display: none;
 }
 
 .navigation {
