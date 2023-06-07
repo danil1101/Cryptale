@@ -3819,6 +3819,7 @@
                 if (100 === percent) {
                     clearInterval(interval);
                     preloader.style.display = "none";
+                    document.body.style.overflowY = "auto";
                 }
             }), 20);
         }));

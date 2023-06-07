@@ -98,6 +98,8 @@ h6 {
 }
 
 body {
+  overflow-x: hidden;
+  overflow-y: hidden;
   padding-right: 0 !important;
   background: #ffd550;
   scrollbar-width: thin;
@@ -135,8 +137,6 @@ body::-webkit-scrollbar-thumb:hover {
 
 html {
   background: #ffd550;
-  overflow-x: hidden;
-  overflow-y: hidden;
   margin-right: calc(-1 * (100vw - 100%));
 }
 
