@@ -3809,11 +3809,18 @@
                 return ne;
             })) : "object" == typeof exports ? module.exports = ne : window.SmoothScroll = ne;
         }();
-        window.addEventListener("load", (function() {
-            setTimeout((function() {
-                document.getElementById("preloader").style.display = "none";
-                document.documentElement.style.overflowY = "auto";
-            }), 2e3);
+        window.addEventListener("DOMContentLoaded", (() => {
+            const preloader = document.getElementById("preloader");
+            const percentElement = preloader.querySelector(".preloader__percent");
+            let percent = 0;
+            const interval = setInterval((() => {
+                percent++;
+                percentElement.textContent = percent + "%";
+                if (100 === percent) {
+                    clearInterval(interval);
+                    preloader.style.display = "none";
+                }
+            }), 20);
         }));
         const input = document.querySelector(".search-history__input");
         const script_button = document.querySelector(".search-history__button");

@@ -1111,11 +1111,17 @@ input::-webkit-inner-spin-button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffd13e), to(#ffc54d));
+  background: -o-linear-gradient(top, #ffd13e 0%, #ffc54d 100%);
+  background: linear-gradient(180deg, #ffd13e 0%, #ffc54d 100%);
   z-index: 9999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1126,8 +1132,18 @@ input::-webkit-inner-spin-button {
 
 #preloader img {
   width: 100%;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 100px;
+  max-height: 150px;
+}
+
+.preloader__percent {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000000;
 }
 
 .header__container {
@@ -2538,6 +2554,24 @@ input::-webkit-inner-spin-button {
 @media (min-width: 61.99875em) {
   .menu-mobile {
     display: none;
+  }
+}
+
+@media (min-width: 131.25em) {
+  body {
+    zoom: 120%;
+  }
+}
+
+@media (min-width: 143.75em) {
+  body {
+    zoom: 130%;
+  }
+}
+
+@media (min-width: 162.5em) {
+  body {
+    zoom: 150%;
   }
 }
 
