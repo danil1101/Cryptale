@@ -2046,6 +2046,7 @@ input::-webkit-inner-spin-button {
 .copy-partners-main__block {
   position: relative;
   max-width: 19.375rem;
+  cursor: pointer;
   width: 100%;
 }
 

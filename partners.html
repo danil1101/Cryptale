@@ -5,7 +5,7 @@
 	<title>Партнеры</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20230607085719" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230607231342" />
 	<link rel="shortcut icon" href="favicon.png" type="image/png" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -244,12 +244,48 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="replenish" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/close-popup.svg" alt="" />
+				</button>
+				<div class="popup__title">Пополнение</div>
+				<div class="popup__body">
+					<div class="popup__group">
+						<input class="popup__input" type="text" placeholder="Логин" />
+						<input class="popup__input" type="text" placeholder="Пароль" />
+					</div>
+					<button class="popup__button button--big"><span>пополнить</span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="withdrawal" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/close-popup.svg" alt="" />
+				</button>
+				<div class="popup__title">Снятие</div>
+				<div class="popup__body">
+					<div class="popup__group">
+						<input class="popup__input" type="text" placeholder="Логин" />
+						<input class="popup__input" type="text" placeholder="Пароль" />
+					</div>
+					<button class="popup__button button--big"><span>снять</span></button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="preloader">
 		<img src="img/preloader.gif" alt="Loading..." />
 		<div class="preloader__percent">0%</div>
 	</div>
 
-	<script src="js/app.min.js?_v=20230607085719"></script>
+	<script src="js/app.min.js?_v=20230607231342"></script>
 
 </body>
 

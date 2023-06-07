@@ -5,7 +5,7 @@
 	<title>Главная</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20230607085719" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230607231342" />
 	<link rel="shortcut icon" href="favicon.png" type="image/png" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,7 +84,7 @@
 							<div class="widgets__item widget">
 								<div class="widget__img">
 									<img src="img/currencies/mine-preview.svg" alt="" />
-									<div class="widget__tip" data-tippy-content="Подсказка">
+									<div class="widget__tip" data-tippy-content="mine">
 										<img src="img/tip.svg" alt="" />
 									</div>
 								</div>
@@ -94,17 +94,17 @@
 										<span>mine</span>
 									</div>
 									<div class="widget__buttons">
-										<button class="widget__button button--small">
+										<a href="#" class="widget__button button--small" data-popup="#replenish">
 											<span>пополнить</span>
-										</button>
-										<button class="widget__button button--small"><span>снять</span></button>
+										</a>
+										<a href="#" class="widget__button button--small" data-popup="#withdrawal"><span>снять</span></a>
 									</div>
 								</div>
 							</div>
 							<div class="widgets__item widget">
 								<div class="widget__img">
 									<img src="img/currencies/plex-preview.svg" alt="" />
-									<div class="widget__tip" data-tippy-content="Подсказка">
+									<div class="widget__tip" data-tippy-content="plex">
 										<img src="img/tip.svg" alt="" />
 									</div>
 								</div>
@@ -114,30 +114,50 @@
 										<span>plex</span>
 									</div>
 									<div class="widget__buttons">
-										<button class="widget__button button--small">
+										<a href="#" class="widget__button button--small" data-popup="#replenish">
 											<span>пополнить</span>
-										</button>
-										<button class="widget__button button--small"><span>снять</span></button>
+										</a>
+										<a href="#" class="widget__button button--small" data-popup="#withdrawal"><span>снять</span></a>
 									</div>
 								</div>
 							</div>
 							<div class="widgets__item widget">
 								<div class="widget__img">
-									<img src="img/currencies/plex-preview.svg" alt="" />
-									<div class="widget__tip" data-tippy-content="Подсказка">
+									<img src="img/currencies/teather-preview.svg" alt="" />
+									<div class="widget__tip" data-tippy-content="tale">
 										<img src="img/tip.svg" alt="" />
 									</div>
 								</div>
 								<div class="widget__body">
 									<div class="widget__count">
 										<span>5015</span>
-										<span>plex</span>
+										<span>teather</span>
 									</div>
 									<div class="widget__buttons">
-										<button class="widget__button button--small">
+										<a href="#" class="widget__button button--small" data-popup="#replenish">
 											<span>пополнить</span>
-										</button>
-										<button class="widget__button button--small"><span>снять</span></button>
+										</a>
+										<a href="#" class="widget__button button--small" data-popup="#withdrawal"><span>снять</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="widgets__item widget">
+								<div class="widget__img">
+									<img src="img/currencies/trx-preview.svg" alt="" />
+									<div class="widget__tip" data-tippy-content="tale">
+										<img src="img/tip.svg" alt="" />
+									</div>
+								</div>
+								<div class="widget__body">
+									<div class="widget__count">
+										<span>5015</span>
+										<span>trx</span>
+									</div>
+									<div class="widget__buttons">
+										<a href="#" class="widget__button button--small" data-popup="#replenish">
+											<span>пополнить</span>
+										</a>
+										<a href="#" class="widget__button button--small" data-popup="#withdrawal"><span>снять</span></a>
 									</div>
 								</div>
 							</div>
@@ -151,22 +171,10 @@
 								<div class="button-exchange-item__body">
 									<div class="button-exchange-item__select">
 										<select name="form[]" data-class-modif="form">
-											<option value="1" selected>
-												<img src="img/currencies/plex.svg" alt="" />
-												<span>Plex</span>
-											</option>
-											<option value="2">
-												<img src="img/currencies/plex.svg" alt="" />
-												<span>Plex</span>
-											</option>
-											<option value="3">
-												<img src="img/currencies/plex.svg" alt="" />
-												<span>Plex</span>
-											</option>
-											<option value="4">
-												<img src="img/currencies/plex.svg" alt="" />
-												<span>Plex</span>
-											</option>
+											<option value="1" selected>Plex</option>
+											<option value="2">Mine</option>
+											<option value="3">Teather</option>
+											<option value="4">TRX</option>
 										</select>
 									</div>
 									<div class="button-exchange-item__balance">Баланс: 5015 plexs</div>
@@ -184,12 +192,10 @@
 								<div class="button-exchange-item__body">
 									<div class="button-exchange-item__select">
 										<select name="form[]" data-class-modif="form">
-											<option value="1" selected>
-												<img src="img/arrow-down.svg" alt="" /> Mine
-											</option>
-											<option value="2">Mine</option>
-											<option value="3">Mine</option>
-											<option value="4">Mine</option>
+											<option value="1" selected>Mine</option>
+											<option value="2">Plex</option>
+											<option value="3">Teather</option>
+											<option value="4">TRX</option>
 										</select>
 									</div>
 									<div class="button-exchange-item__balance">Баланс: 5015 plexs</div>
@@ -995,12 +1001,48 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="replenish" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/close-popup.svg" alt="" />
+				</button>
+				<div class="popup__title">Пополнение</div>
+				<div class="popup__body">
+					<div class="popup__group">
+						<input class="popup__input" type="text" placeholder="Логин" />
+						<input class="popup__input" type="text" placeholder="Пароль" />
+					</div>
+					<button class="popup__button button--big"><span>пополнить</span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="withdrawal" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/close-popup.svg" alt="" />
+				</button>
+				<div class="popup__title">Снятие</div>
+				<div class="popup__body">
+					<div class="popup__group">
+						<input class="popup__input" type="text" placeholder="Логин" />
+						<input class="popup__input" type="text" placeholder="Пароль" />
+					</div>
+					<button class="popup__button button--big"><span>снять</span></button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="preloader">
 		<img src="img/preloader.gif" alt="Loading..." />
 		<div class="preloader__percent">0%</div>
 	</div>
 
-	<script src="js/app.min.js?_v=20230607085719"></script>
+	<script src="js/app.min.js?_v=20230607231342"></script>
 
 </body>
 
