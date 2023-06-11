@@ -3809,6 +3809,34 @@
                 return ne;
             })) : "object" == typeof exports ? module.exports = ne : window.SmoothScroll = ne;
         }();
+        const selects = document.querySelectorAll("._select-active");
+        const inputs = document.querySelectorAll(".button-exchange-item input");
+        const costs = document.querySelectorAll(".button-exchange-item__cost");
+        const balances = document.querySelectorAll(".button-exchange-item__balance");
+        const buttonArrows = document.querySelector(".buttons-exchange__arrows");
+        buttonArrows?.addEventListener("click", (() => {
+            const tempSelectContet = selects[0].querySelector(".select__content").textContent;
+            selects[0].querySelector(".select__content").textContent = selects[1].querySelector(".select__content").textContent;
+            selects[1].querySelector(".select__content").textContent = tempSelectContet;
+            const tempInputValue = inputs[0].value;
+            inputs[0].value = inputs[1].value;
+            inputs[1].value = tempInputValue;
+            const tempCostValue = costs[0].textContent;
+            costs[0].textContent = costs[1].textContent;
+            costs[1].textContent = tempCostValue;
+            const tempCostBalances = balances[0].textContent;
+            balances[0].textContent = balances[1].textContent;
+            balances[1].textContent = tempCostBalances;
+        }));
+        window.addEventListener("load", updateDataAttributeValue);
+        window.addEventListener("resize", updateDataAttributeValue);
+        function updateDataAttributeValue() {
+            const tablesPaginations = document.querySelectorAll(".--resize-row");
+            const windowHeight = window.innerHeight;
+            tablesPaginations?.forEach((tablePaginations => {
+                tablePaginations.dataset.pagecount = (windowHeight - 660) * (23 - 13) / (1e3 - 660) + 13;
+            }));
+        }
         window.addEventListener("DOMContentLoaded", (() => {
             const preloader = document.getElementById("preloader");
             const percentElement = preloader.querySelector(".preloader__percent");
