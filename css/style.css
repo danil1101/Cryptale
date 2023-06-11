@@ -553,6 +553,11 @@ body::after {
   max-width: 512px;
 }
 
+.--row .popup__content {
+  max-width: 570px;
+  background: url("../img/partners-main-column-number_1.svg") bottom/200px no-repeat, #ffd550;
+}
+
 .lock .popup__content {
   visibility: visible;
 }
@@ -589,6 +594,10 @@ body::after {
 .popup__body {
   max-width: 25rem;
   margin: 0 auto;
+}
+
+.--row .popup__body {
+  max-width: 30rem;
 }
 
 .popup__group {
