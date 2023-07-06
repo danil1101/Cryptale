@@ -267,7 +267,8 @@ html {
 }
 .select__options {
   color: #000;
-  max-width: 7.5rem;
+  max-width: 18.75rem;
+  width: 100%;
   position: absolute;
   top: 36px;
   overflow: hidden;
